@@ -59,7 +59,7 @@ genres */
 let numberOfFilms; 
 
 function start(){
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели ?','');
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели ?','').trim();
 
     while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели ?','');
@@ -79,8 +79,8 @@ let personalMovieDB = {
 
 function rememberMyFilms(){
     for(let i = 0; i < 2; i++){
-        const questionOne = prompt('Один из последних просмотренных фильмов ?',''),
-              questionTwo = +prompt('На сколько его оценіте ?','');
+        const questionOne = prompt('Один из последних просмотренных фильмов ?','').trim(),
+              questionTwo = +prompt('На сколько его оценіте ?','').trim();
         
         if(questionOne != '' && questionTwo != '' & questionOne != null && questionTwo != null && questionOne.length < 50){
             personalMovieDB.movies[questionOne] = questionTwo;
